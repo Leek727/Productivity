@@ -10,9 +10,8 @@
 
   let cycles = 0;
   let times = [25*60, 5 * 60, 25 * 60, 5 * 60,
-              25 * 60, 5 * 60, 25 * 60,
-              25 * 60];
-  let cycle_names = ["Work", "Rest", "Work", "Rest", "Work", "Rest", "Work", "Rest", "Long Rest"]
+              25 * 60, 5 * 60, 25 * 60,25 * 60];
+  let cycle_names = ["Work", "Rest", "Work", "Rest", "Work", "Rest", "Work", "Long Rest"]
 
   let i = 0;
   let original = times[i];
@@ -56,7 +55,7 @@
     timer = tweened(times[i % times.length]);
   }
 
-  $: current_cycle = cycle_names[i];
+  $: current_cycle = cycle_names[i % times.length];
 </script>
 
 <svelte:head>
